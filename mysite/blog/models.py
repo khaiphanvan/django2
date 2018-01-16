@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 def get_sentinel_user():
     return get_user_model().objects.get_or_create(username='deleted')[0]
@@ -38,6 +39,8 @@ class Post(models.Model):
     objects = models.Manager()
     #published = PublishedManager()
     published = PublishedManage()
+
+    tags = TaggableManager()
 
     class Meta:
         ordering = ('-publish',)

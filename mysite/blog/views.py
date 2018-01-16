@@ -44,10 +44,10 @@ def post_detail(request, year, month, day, slug):
             new_comment.post = post
             # Save the comment to the database
             new_comment.save()
-            comment_form = CommentForm()
+            return
     else:
         comment_form = CommentForm()
-    return render(request,'blog/post/detail.html', {'post': post,'comments': comments, 'comment_form': comment_form})
+    return render(request,'blog/post/detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form})
 
 
 def post_share(request, post_id):
