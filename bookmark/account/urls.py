@@ -11,7 +11,7 @@ urlpatterns = [
     # login / logout urls
     # path('', views.user_login, name='index'),
     path('', views.dashboard, name='dashboard'),
-    path('login/', login, name='login'),
+    path('login/', views.user_login, name='login'),
     path('logout/', logout, name='logout'),
     path('logout-then-login/', logout_then_login, name='logout_then_login'),
     # change password urls
@@ -25,4 +25,5 @@ urlpatterns = [
     path('password-reset/complete/', password_reset_complete, name='password_reset_complete'),
 
     path('register/', views.register, name='register'),
+    path('edit/', views.edit, name='edit'),
 ]
